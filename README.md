@@ -1,6 +1,6 @@
 # 电子设备保养系统
 ##一·ER模型图
-![]()
+![](er图.png)
 ##二数据库sql脚本
 DROP TABLE IF EXISTS `保养记录`;
 CREATE TABLE `保养记录` (
@@ -91,6 +91,10 @@ CREATE TABLE `保养人` (
 
 ##三数据库查询
 ###（1）根据设备id查询保养记录
+select * from 设备表 as a inner join 保养记录 as b on a.设备id=b.设备id where a.设备id="1"
+![](查询1.png)
 ###（2）根据设备id打印检修报告
+select * from 设备表 as a inner join 保养记录 as b on a.设备id=b.设备id left join 保养消耗 as c on b.保养记录id=c.保养记录id where a.设备id="1" 
+![](查询2.png)
 ##四 原型设计
 [axure原型设计](http://7kjelj.axshare.com)
